@@ -1,8 +1,8 @@
-# MNIST Neural Network Classifier 🧠
+# MNIST Neural Network Classifier
 
 A simple feedforward neural network implementation from scratch using NumPy for handwritten digit recognition on the MNIST dataset.
 
-## 🎯 Project Overview
+## Project Overview
 
 This project implements a 3-layer neural network capable of classifying handwritten digits (0-9).
 
@@ -12,7 +12,7 @@ This project implements a 3-layer neural network capable of classifying handwrit
 - Built-in training visualization and testing
 - Model saving/loading functionality
 
-## 🏗️ Architecture
+## Architecture
 
 The neural network consists of three layers:
 
@@ -49,7 +49,7 @@ uv run main.py
 - Otherwise, trains a new model for 800 iterations
 - Displays predictions on random test images with visualization
 
-## 📊 Performance
+## Performance
 
 With my current settings, the following performance is achieved:
 
@@ -84,24 +84,24 @@ nn = SimpleNN(
 
 For a batch of $M$ examples:
 
-**Layer 1 (Hidden):**
-$$Z^{[1]} = W^{[1]}X + b^{[1]}$$
+**Layer 1 (Hidden):**  
+$$Z^{[1]} = W^{[1]}X + b^{[1]}$$  
 $$A^{[1]} = \text{ReLU}(Z^{[1]})$$
 
-**Layer 2 (Output):**
-$$Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]}$$
+**Layer 2 (Output):**  
+$$Z^{[2]} = W^{[2]}A^{[1]} + b^{[2]}$$  
 $$A^{[2]} = \text{Softmax}(Z^{[2]})$$
 
 ### Backpropagation
 
-**Output Layer Gradients:**
-$$dZ^{[2]} = A^{[2]} - Y$$
-$$dW^{[2]} = \frac{1}{M} dZ^{[2]} \cdot (A^{[1]})^T$$
+**Output Layer Gradients:**  
+$$dZ^{[2]} = A^{[2]} - Y$$  
+$$dW^{[2]} = \frac{1}{M} dZ^{[2]} \cdot (A^{[1]})^T$$  
 $$db^{[2]} = \frac{1}{M} \sum dZ^{[2]}$$
 
-**Hidden Layer Gradients:**
-$$dZ^{[1]} = (W^{[2]})^T \cdot dZ^{[2]} \odot \text{ReLU}'(Z^{[1]})$$
-$$dW^{[1]} = \frac{1}{M} dZ^{[1]} \cdot X^T$$
+**Hidden Layer Gradients:**  
+$$dZ^{[1]} = (W^{[2]})^T \cdot dZ^{[2]} \odot \text{ReLU}'(Z^{[1]})$$  
+$$dW^{[1]} = \frac{1}{M} dZ^{[1]} \cdot X^T$$  
 $$db^{[1]} = \frac{1}{M} \sum dZ^{[1]}$$
 
 Where:
